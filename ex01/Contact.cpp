@@ -6,20 +6,18 @@
 /*   By: jorgutie <jorgutie@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 18:38:40 by jorgutie          #+#    #+#             */
-/*   Updated: 2025/04/26 14:13:00 by jorgutie         ###   ########.fr       */
+/*   Updated: 2025/04/26 18:37:24 by jorgutie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include <iomanip> // for std::setw()
-
 
 // Helper for check only digits in phone number
 static int is_digit_only(const std::string &input) 
 {
 	for (int i = 0; i < input.length(); i++)
 	{
-		if(!isdigit(input[i]))
+		if(!std::isdigit(input[i]))
 			return (0);
 	}
 	return 1;
@@ -86,7 +84,7 @@ void Contact::get_contact_summary(int index)const
 			  << std::endl;
 }
 
-
+// To print the complete information of the contact.
 void Contact::get_contact_details()const
 {
 	std::cout << "First Name:      " << first_name << std::endl;

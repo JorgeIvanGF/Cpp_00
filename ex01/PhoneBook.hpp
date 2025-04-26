@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jorgutie <jorgutie@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 18:08:27 by jorgutie          #+#    #+#             */
-/*   Updated: 2025/04/26 17:12:14 by jorgutie         ###   ########.fr       */
+/*   Created: 2025/04/25 17:37:49 by jorgutie          #+#    #+#             */
+/*   Updated: 2025/04/26 17:05:51 by jorgutie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-#define CONTACT_HPP
 
-#include <iostream>
-#include <iomanip> // for std::setw()
-#include <cctype> // for isdigit()
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-class Contact
+#include "Contact.hpp"
+
+// The PhoneBook Class
+class PhoneBook
 {
 	private:
-		std::string first_name;
-		std::string last_name;
-		std::string nickname;
-		std::string phone_number;
-		std::string darkest_secret;
-
+		Contact contacts[8]; // Array to store up to 8 contacts
+		int current_index;    // Where to save the next contact
+    	int contact_count;    // How many contacts phonebook has
+	
 	public:
-		void set_contact();
-		void get_contact_summary(int index) const;
-		void get_contact_details() const;
+		PhoneBook(); // Constructor
+		void add_contact(); // Adds contact
+		void search_contact() const; // Displays contacts
 };
-
 
 #endif
