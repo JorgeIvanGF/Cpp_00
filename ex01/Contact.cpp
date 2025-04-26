@@ -6,12 +6,66 @@
 /*   By: jorgutie <jorgutie@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 18:38:40 by jorgutie          #+#    #+#             */
-/*   Updated: 2025/04/25 21:12:02 by jorgutie         ###   ########.fr       */
+/*   Updated: 2025/04/26 14:13:00 by jorgutie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include <iomanip> // for std::setw()
+
+
+// Helper for check only digits in phone number
+static int is_digit_only(const std::string &input) 
+{
+	for (int i = 0; i < input.length(); i++)
+	{
+		if(!isdigit(input[i]))
+			return (0);
+	}
+	return 1;
+}
+
+// Helper fn to READ user inputs
+// The "&" is points to the same memory ADDRESS as the original object,
+// it means, act like the Object itself
+static std::string get_input(const std::string &prompt, std::string &field)
+{
+	std::string input;
+	
+	while(1)
+	{
+		std::cout << prompt;
+		std::getline(std::cin, input);
+
+		// Check if its not Empty and looks for the first character in the string that is NOT a space/tab
+		// if the entire string is only spaces or tabs, it returns std::string::npos (meaning "Not Found")
+		if (!input.empty() && input.find_first_not_of(" \t") != std::string::npos)
+		{
+			if (field ==  "phone_number")
+			{
+				if(!is_digit_only(input))
+				{
+					std::cout << "Phone number must contains only numbers. Try again.";
+					continue;
+				}
+			}
+			return input; // a Valid input
+		}
+		else 
+			std::cout << "Field cannot be empty. Please try again." << std::endl;
+	}
+}
+
+// For adding a contact to the phonebook.
+void Contact::set_contact(void)
+{
+	first_name = get_input("Please provide the First name: ", first_name);
+	last_name = get_input("Please provide the Last Name: ", last_name);
+	nickname = get_input("Please provide the Nickname: ", nickname);
+	phone_number = get_input("Please provide the Phone number: ", phone_number);
+	darkest_secret = get_input("Please provide the Darkest secret: ", darkest_secret);
+	
+}
 
 // Helper function for giving format to each field
 // (cut longs and right-align)
