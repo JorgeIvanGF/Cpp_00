@@ -6,7 +6,7 @@
 /*   By: jorgutie <jorgutie@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 18:08:27 by jorgutie          #+#    #+#             */
-/*   Updated: 2025/04/26 17:12:14 by jorgutie         ###   ########.fr       */
+/*   Updated: 2025/04/26 19:53:16 by jorgutie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,17 @@
 #include <iostream>
 #include <iomanip> // for std::setw()
 #include <cctype> // for isdigit()
+
+
+// Colors
+#define RESET   "\033[0m"
+#define RED     "\033[0;31m"
+#define GREEN   "\033[0;32m"
+#define YELLOW  "\033[0;33m"
+#define BLUE    "\033[0;34m"
+#define MAGENTA "\033[0;35m"
+#define CYAN    "\033[0;36m"
+#define WHITE   "\033[0;37m"
 
 class Contact
 {

@@ -6,12 +6,13 @@
 /*   By: jorgutie <jorgutie@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 19:04:10 by jorgutie          #+#    #+#             */
-/*   Updated: 2025/04/26 19:28:02 by jorgutie         ###   ########.fr       */
+/*   Updated: 2025/04/26 21:00:17 by jorgutie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "PhoneBook.hpp"
+
 
 // The Main of the project
 int main()
@@ -23,13 +24,16 @@ int main()
 	std::string command;
 
 	// Print welcome message
-	std::cout << "Welcome to My Awsome Phonebook!" << std::endl;
+	std::cout << std::endl;
+	std::cout << MAGENTA << "______WELCOME TO MY AWSOME PHONEBOOK!!______" << RESET << std::endl;
 
 	// The main Loop program
 	while (true)
 	{
+		
 		// Display the prompt to choose
-		std::cout << "Please enter a command (ADD, SEARCH or EXIT): ";
+		std::cout << std::endl;
+		std::cout << YELLOW <<"Please enter a command (ADD, SEARCH or EXIT): " << RESET;
 
 		// Get the command from the user input
 		std::getline(std::cin, command);
@@ -43,13 +47,13 @@ int main()
 		
 		else if (command == "EXIT")
 		{
-			std::cout << "Good bye!." << std::endl;
+			std::cout << MAGENTA << "Good bye!." << RESET << std::endl;
 			break;
 		}
 
 		else // If no valid command received
 		{
-			std::cout << "Unknown command. Please try again" << std::endl;
+			std::cout << RED << "Unknown command. Please try again" << RESET << std::endl;
 		}
 	}
 	return (0);
