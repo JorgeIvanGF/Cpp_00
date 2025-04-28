@@ -6,7 +6,7 @@
 /*   By: jorgutie <jorgutie@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 19:04:10 by jorgutie          #+#    #+#             */
-/*   Updated: 2025/04/27 14:53:07 by jorgutie         ###   ########.fr       */
+/*   Updated: 2025/04/28 20:42:33 by jorgutie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int main()
 		
 		else if (command == "EXIT")
 		{
-			std::cout << MAGENTA << "Good bye!." << RESET << std::endl;
+			std::cout << MAGENTA << "\n________Phonebook Closed. Good bye!!________" << RESET << std::endl;
 			break;
 		}
 

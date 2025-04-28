@@ -6,7 +6,7 @@
 /*   By: jorgutie <jorgutie@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 18:38:40 by jorgutie          #+#    #+#             */
-/*   Updated: 2025/04/26 20:49:54 by jorgutie         ###   ########.fr       */
+/*   Updated: 2025/04/28 20:40:10 by jorgutie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static bool is_digit_only(const std::string &input)
 }
 
 // Helper fn to READ user inputs
-// The "&" is points to the same memory ADDRESS as the original object,
+// The "&"  points to the same memory ADDRESS as the original object,
 // it means, act like the Object itself
 static std::string get_input(const std::string &prompt, const std::string &field)
 {
@@ -89,10 +89,10 @@ void Contact::get_contact_summary(int index)const
 // To print the complete information of the contact.
 void Contact::get_contact_details()const
 {
-	std::cout << "First Name:      " << first_name << std::endl;
-	std::cout << "Last Name:       " << last_name << std::endl;
-	std::cout << "Nickname:        " << nickname << std::endl;
-	std::cout << "Phone Number:    " << phone_number << std::endl;
-	std::cout << "Darkest Secret:  " << darkest_secret << std::endl;
+	std::cout << BLUE << "First Name:      " << RESET << first_name << std::endl;
+	std::cout << BLUE << "Last Name:       " << RESET << last_name << std::endl;
+	std::cout << BLUE << "Nickname:        " << RESET << nickname << std::endl;
+	std::cout << BLUE << "Phone Number:    " << RESET << phone_number << std::endl;
+	std::cout << BLUE << "Darkest Secret:  " << RESET << darkest_secret << std::endl;
 }
 
